@@ -3,7 +3,9 @@
 
 Graph::Graph()
 {
-
+    
+    std::cout<<"Is the graph Directed(1) or undirected(0)?"<<std::endl;
+    std::cin>>isDirected;
 for(int i=0;i<size;i++)
 {
     for(int j=0;j<size;j++)
@@ -14,9 +16,10 @@ for(int i=0;i<size;i++)
 
 }
 Graph::Graph(int size)
-{
-
-
+{    
+    
+    std::cout<<"Is the graph Directed(1) or undirected(0)?"<<std::endl;
+    std::cin>>isDirected;
     for(int i=0;i<size;i++)
 {
     for(int j=0;j<size;j++)
@@ -53,15 +56,25 @@ void Graph::addVertex(int vertex)
     last_vertex++;
 }
 void Graph::addEdge(int ver1, int ver2)
+
 {
-
     int indexOfVer1, indexOfVer2;
-    if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
-    {
-        this->adjMatrix[indexOfVer1][indexOfVer2]=1;
+     if(isDirected){
+        if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
+        {
+            this->adjMatrix[indexOfVer1][indexOfVer2]=1;
+            
+        }
     }
-
+    else{
+        if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
+        {
+            this->adjMatrix[indexOfVer1][indexOfVer2]=1;
+            this->adjMatrix[indexOfVer2][indexOfVer1]=1;
+        }
+    }
 }
+
 
 void Graph::trasverse()
 {
