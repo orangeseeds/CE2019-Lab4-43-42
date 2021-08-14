@@ -3,6 +3,7 @@
 
 Graph::Graph()
 {
+
 for(int i=0;i<size;i++)
 {
     for(int j=0;j<size;j++)
@@ -14,6 +15,8 @@ for(int i=0;i<size;i++)
 }
 Graph::Graph(int size)
 {
+
+
     for(int i=0;i<size;i++)
 {
     for(int j=0;j<size;j++)
@@ -36,7 +39,7 @@ bool Graph::vertex_index_exists(int &index, int targetVertex)
 {
     for(int i=0;i<=last_vertex;i++)
     {
-        if (this->vertices[i]=targetVertex)
+        if (this->vertices[i]==targetVertex)
         {
             index=i;
             return true;
@@ -46,16 +49,18 @@ bool Graph::vertex_index_exists(int &index, int targetVertex)
 }
 void Graph::addVertex(int vertex)
 {
-    vertices[last_vertex]==vertex;
+    vertices[last_vertex]=vertex;
     last_vertex++;
 }
 void Graph::addEdge(int ver1, int ver2)
 {
+
     int indexOfVer1, indexOfVer2;
     if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
     {
         this->adjMatrix[indexOfVer1][indexOfVer2]=1;
     }
+
 }
 
 void Graph::trasverse()
@@ -69,5 +74,32 @@ void Graph::trasverse()
 
         }
         std::cout<<"\n";
+    }
+}
+
+void Graph::removeVertex(int vertex)
+{
+    int indx;
+    if(vertex_index_exists(indx,vertex))
+    {
+        for(int i=0;i<last_vertex;i++)
+        {
+            this->adjMatrix[i][indx]=0;//removing outgoing edged
+            this->adjMatrix[indx][i]=0;//removing incomming edged
+        }
+        vertices[indx]=0;
+        for( int j=indx;j<last_vertex;j++)
+        {
+            this->vertices[j]=this->vertices[j+1];
+        }
+        last_vertex--;
+    }
+}
+void Graph::removeEdge(int ver1, int ver2)
+{
+    int indexOfVer1,indexOfVer2;
+    if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
+    {
+        this->adjMatrix[indexOfVer1][indexOfVer2]=0;
     }
 }

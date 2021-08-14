@@ -2,7 +2,7 @@ class Graph
 {
     int last_vertex=0;
     int size=6;
-
+    bool isDirected;
     public:
     Graph();
     Graph(int size);
