@@ -111,8 +111,18 @@ void Graph::removeVertex(int vertex)
 void Graph::removeEdge(int ver1, int ver2)
 {
     int indexOfVer1,indexOfVer2;
-    if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
-    {
-        this->adjMatrix[indexOfVer1][indexOfVer2]=0;
+     int indexOfVer1,indexOfVer2;
+    if(isDirected){
+        if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
+        {
+            this->adjMatrix[indexOfVer1][indexOfVer2]=0;
+        }
+    }
+    else{
+         if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
+        {
+            this->adjMatrix[indexOfVer1][indexOfVer2]=0;
+            this->adjMatrix[indexOfVer2][indexOfVer1]=0;
+        }
     }
 }
