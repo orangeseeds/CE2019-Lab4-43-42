@@ -1,7 +1,7 @@
 #include <iostream>
 #include "graph.h"
 
-Graph::Graph()
+Graph::Graph()//mohit
 {
     
     std::cout<<"Is the graph Directed(1) or undirected(0)?"<<std::endl;
@@ -15,7 +15,7 @@ for(int i=0;i<size;i++)
 }
 
 }
-Graph::Graph(int size)
+Graph::Graph(int size)//mohit
 {    
     
     std::cout<<"Is the graph Directed(1) or undirected(0)?"<<std::endl;
@@ -29,7 +29,7 @@ Graph::Graph(int size)
 }
 }
 
-bool Graph::isEmpty()
+bool Graph::isEmpty()//mohit
 {
     if(last_vertex==0)
         {return true;}
@@ -38,7 +38,7 @@ bool Graph::isEmpty()
 
 
 
-bool Graph::vertex_index_exists(int &index, int targetVertex)
+bool Graph::vertex_index_exists(int &index, int targetVertex)//mohit
 {
     for(int i=0;i<=last_vertex;i++)
     {
@@ -50,12 +50,12 @@ bool Graph::vertex_index_exists(int &index, int targetVertex)
     }
     return false;
 }
-void Graph::addVertex(int vertex)
+void Graph::addVertex(int vertex)//mohit
 {
     vertices[last_vertex]=vertex;
     last_vertex++;
 }
-void Graph::addEdge(int ver1, int ver2)
+void Graph::addEdge(int ver1, int ver2)//mohit
 
 {
     int indexOfVer1, indexOfVer2;
@@ -76,7 +76,7 @@ void Graph::addEdge(int ver1, int ver2)
 }
 
 
-void Graph::trasverse()
+void Graph::trasverse()//mohit
 {
     for (int i=0; i<last_vertex;i++)
     {
@@ -90,7 +90,7 @@ void Graph::trasverse()
     }
 }
 
-void Graph::removeVertex(int vertex)
+void Graph::removeVertex(int vertex)//mohit
 {
     int indx;
     if(vertex_index_exists(indx,vertex))
@@ -108,7 +108,7 @@ void Graph::removeVertex(int vertex)
         last_vertex--;
     }
 }
-void Graph::removeEdge(int ver1, int ver2)
+void Graph::removeEdge(int ver1, int ver2)//mohit
 {
     int indexOfVer1,indexOfVer2;
      int indexOfVer1,indexOfVer2;
