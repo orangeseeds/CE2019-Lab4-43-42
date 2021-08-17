@@ -80,7 +80,7 @@ void Graph::trasverse()//mohit
 {
     for (int i=0; i<last_vertex;i++)
     {
-        std::cout<<i<<":";
+        std::cout<<vertices[i]<<":";
         for (int j=0; j<last_vertex;j++)
         {
             std::cout<<adjMatrix[i][j]<<" ";
@@ -111,7 +111,7 @@ void Graph::removeVertex(int vertex)//mohit
 void Graph::removeEdge(int ver1, int ver2)//mohit
 {
     int indexOfVer1,indexOfVer2;
-     int indexOfVer1,indexOfVer2;
+    
     if(isDirected){
         if(vertex_index_exists(indexOfVer1,ver1)&&vertex_index_exists(indexOfVer2,ver2))
         {
