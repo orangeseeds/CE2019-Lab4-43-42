@@ -126,7 +126,7 @@ void Graph::removeEdge(int ver1, int ver2)//mohit
     }
 }
 
-int Graph::numberOfEdges()//mohit
+int Graph::numberOfEdges()//Shubhechchhak
 {
     // for directed
     if (this->isEmpty())
@@ -149,12 +149,12 @@ int Graph::numberOfEdges()//mohit
     return this->isDirected ? edges_count : edges_count/2;
 }
 
-int Graph::numberOfVertices()//mohit
+int Graph::numberOfVertices()//Shubhechchhak
 {
     return last_vertex;
 }
 
-int Graph::indegree(int vertex) //mohit
+int Graph::indegree(int vertex) //Shubhechchhak
 {
     int indegree = 0, index;
 
@@ -177,7 +177,7 @@ int Graph::indegree(int vertex) //mohit
     
 }
 
-int Graph::outdegree(int vertex) //mohit
+int Graph::outdegree(int vertex) //Shubhechchhak
 {
     int outdegree = 0, index;
 
@@ -197,7 +197,7 @@ int Graph::outdegree(int vertex) //mohit
     return outdegree;
 }
 
-std::vector<int> Graph::neighbours(int vertex) //mohit
+std::vector<int> Graph::neighbours(int vertex) //Shubhechchhak
 {
     int index;
     std::vector<int> neighbours;
@@ -226,7 +226,8 @@ std::vector<int> Graph::neighbours(int vertex) //mohit
     return neighbours;
 }
 
-bool Graph::neighbours(int ver1, int ver2){
+bool Graph::neighbours(int ver1, int ver2)//Shubhechchhak
+{
     int index_v1, index_v2;
 
     if (! (vertex_index_exists(index_v1, ver1) || vertex_index_exists(index_v2, ver2)))
