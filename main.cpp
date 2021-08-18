@@ -41,6 +41,7 @@ Graph generateGraph()
 
 
             combinations.insert(pair<int, int>(vertex_1, vertex_2));
+            combinations.insert(pair<int, int>(vertex_2, vertex_1));
             R.addEdge(vertex_1, vertex_2);
         }
     }
